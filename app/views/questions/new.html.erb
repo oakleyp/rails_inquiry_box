@@ -1,0 +1,19 @@
+<h1>creating a new question</h1>
+ <%= form_for @question do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :user_id %>
+  <%= f.number_field :user_id %>
+
+  <%= f.label :tag_id %>
+  <%= f.number_field :tag_id %>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+
+  <%= f.submit "submit" %>
+ <% end %>

@@ -1,0 +1,13 @@
+<h1>Profile</h1>
+
+<div class="col-sm-4">
+  <span><%= @user.displayname %>
+  <% if logged_in? && session[:user_id] == @user.id %>
+    <%= link_to 'Edit', edit_user_path %>
+  <% end %>
+  </span>
+</div>
+
+<div class="col-sm-8">
+
+</div>
