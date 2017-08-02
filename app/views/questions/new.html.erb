@@ -1,4 +1,6 @@
-<h1>creating a new question</h1>
+<% if logged_in? %>
+ <h1>creating a new question</h1>
+
  <%= form_for @question do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -6,14 +8,13 @@
   <%= f.label :content %>
   <%= f.text_field :content %>
 
-  <%= f.label :user_id %>
-  <%= f.number_field :user_id %>
-
   <%= f.label :tag_id %>
-  <%= f.number_field :tag_id %>
-
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
+  <%= f.text_field :tag_id %>
 
   <%= f.submit "submit" %>
+ <% end %>
+
+ <% else %>
+  <h2>You must be logged in to create a new question</h2>
+  <p><%= link_to 'Login', login_path %> | <%= link_to 'Register', new_user_path %></p>
  <% end %>
