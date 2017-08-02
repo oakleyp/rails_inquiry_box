@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731172532) do
+ActiveRecord::Schema.define(version: 420170802150024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170731172532) do
     t.text "content"
     t.bigint "question_id"
     t.integer "rating"
-    t.boolean "correct"
+    t.boolean "is_valid"
     t.bigint "tag_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -55,9 +55,4 @@ ActiveRecord::Schema.define(version: 20170731172532) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "answers", "tags"
-  add_foreign_key "answers", "users"
-  add_foreign_key "questions", "tags"
-  add_foreign_key "questions", "users"
 end

@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.page(params[:page]).per(5)
   end
-  
+
   def new
    @question = Question.new
   end
@@ -43,7 +43,6 @@ class QuestionsController < ApplicationController
 
     @question = Question.find(params[:id])
     @answer = @question.answers.build
-
   end
 
   def update
