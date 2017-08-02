@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
+  belongs_to :user
   belongs_to :question
   belongs_to :tag
-  belongs_to :user
 end
