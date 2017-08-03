@@ -1,20 +1,38 @@
 <% if current_user %>
- <h1>creating a new question</h1>
+<h1 id="question-form-header">Create a new question please?</h1>
 
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+<p id="demo"></p>
+
+<div id=“question-form-wrapper“>
  <%= form_for @question do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+    <%= f.label :title, class: "form-group", id: "title" %>
+    <%= f.text_field :title, class: "form-control"  %>
 
-  <%= f.label :tag_id %>
-  <%= f.text_field :tag_id %>
+    <%= f.label :content, class: "form-group", id: "content" %>
+    <%= f.text_field :content, class: "form-control" %>
 
-  <%= f.submit "submit" %>
+   <%= f.label :user_id, class: "form-group", id: "user" %>
+   <%= f.number_field :user_id, class: "form-control"  %>
+
+   <%= f.label :tag_id, class: "form-group", id: "tag" %>
+    <%= f.number_field :tag_id, class: "form-control"  %>
+
+   <%= f.label :rating, class: "form-group", id: "rating" %>
+    <%= f.number_field :rating, class: "form-control"  %>
+
+   <%= f.submit "submit" %>
  <% end %>
-
- <% else %>
+</div>
+<% else %>
   <h2>You must be logged in to create a new question</h2>
   <p><%= link_to 'Login', login_path %> | <%= link_to 'Register', new_user_path %></p>
- <% end %>
+<% end %>
+ <footer>
+    <div class="footrow">
+      <p>Copyright &copy; Rubeast Cohort 10 2017</p>
+    </div>
+  </footer>
