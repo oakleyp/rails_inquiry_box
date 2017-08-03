@@ -4,13 +4,23 @@ class AnswersController < ApplicationController
   end
 
   def create
+		p params
+		if current_user
 		@answer = Answer.new(answer_params)
+		@answer[:question_id] = params["answer"]["question"].to_i
+		#@answer = @question.answers.new(answer_params)
+		@answer.user_id = current_user
 		@answer[:rating] = 0
-		@answer[:correct] = false
+		@answer[:is_valid] = false
+		@answer[:user_id] = current_user.id
+		@answer[:tag_id] = 1
+		
 		if @answer.save
 			redirect_to @answer, notice: 'Answer was successfully created.'
 		else
 			render 'new'
+		end
+			
 		end
   end
 
