@@ -13,13 +13,13 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_url, notice: 'User was successfully created.'
-    else 
+    else
       render :new
     end
   end
 
   def show
-    
+
   end
 
   def update
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  private 
+  private
 
     def set_user
         @user = User.find(params[:id])
