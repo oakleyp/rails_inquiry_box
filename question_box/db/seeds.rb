@@ -74,4 +74,3 @@ Answer.create!(content: "this is the answer you've been looking for4", question_
 Answer.create!(content: "this is the answer you've been looking for5", question_id: 2, rating: 4, correct: "true", tag_id: 3, user_id: 2)
 Answer.create!(content: "this is the answer you've been looking for6", question_id: 1, rating: 3, correct: "false", tag_id: 4, user_id: 4)
 Answer.create!(content: "this is the answer you've been looking for7", question_id: 5, rating: 1, correct: "true", tag_id: 3, user_id: 3)
-

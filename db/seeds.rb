@@ -39,14 +39,7 @@
 # )
 # =======
 
-# Tag data
-Tag.create!(name: "rubyonrails")
-Tag.create!(name: "javascript")
-Tag.create!(name: "html")
-Tag.create!(name: "rubyonrails")
-Tag.create!(name: "javascript")
-Tag.create!(name: "html")
-Tag.create!(name: "css")
+#  add Tag data back
 
 
 # User data
