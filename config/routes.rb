@@ -7,11 +7,16 @@ Rails.application.routes.draw do
 
   root to: "questions#index"
 
+	get 'signup' => 'user#new'
+		resources :users
   get 'posts/index'
 
   get 'posts/show'
 
   get '/login' => 'sessions#new'
+	post 'login' => 'sessions#create'
+	delete 'logout' => 'sessions#destroy'
+
 
   get 'tags/new'
 
@@ -22,7 +27,7 @@ Rails.application.routes.draw do
   get 'tags/update'
 
   get 'tags/destroy'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
