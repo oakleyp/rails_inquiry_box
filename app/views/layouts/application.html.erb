@@ -6,6 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<% if current_user %>
+  <ul>
+    <li><%= current_user.email %></li>
+    <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Login", login_path %></a></li>
+    <li><%= link_to "Signup", new_user_path %></a></li>
+  </ul>
+<% end %>
+
+
   </head>
 
   <body>
