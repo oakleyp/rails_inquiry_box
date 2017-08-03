@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'posts/show'
 
-  get '/login' => 'users#new'
+  get '/login' => 'sessions#new'
 
   get 'tags/new'
 
