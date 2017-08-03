@@ -1,1 +1,12 @@
-<h1>this is the index</h1>
+<h1>Questions</h1>
+<hr />
+<% @questions.each do |question| %>
+  <h2><%= link_to "#{question.title}", question_path(question)  %></h2>
+  <p>
+  <%= question.content %>
+  <%= "tag_id:" + question.tag_id.to_s %>
+  </p>
+<% end %>
+<hr />
+<%= paginate @questions%>
+<%= page_entries_info @questions %>
