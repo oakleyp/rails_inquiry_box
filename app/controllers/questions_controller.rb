@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if logged_in?
+    if current_user
       @question = Question.new(question_params)
       @question[:user_id] = session[:user_id]
       @question[:rating] = 0
