@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
       @question[:user_id] = session[:user_id]
       @question[:rating] = 0
 
-      #Look up tag id or create new tag in tag db 
+      #Look up tag id or create new tag in tag db
       tag = Tag.where({ name: params["question"]["tag_id"] }).first
       if(!tag.nil?)
         @question[:tag_id] = tag.id
@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
         newtag.name = params["question"]["tag_id"]
         if newtag.save
           @question[:tag_id] = newtag.id
-        else 
+        else
           #Yeah... something went wrong
           @question[:tag_id] = 1
         end
@@ -40,7 +40,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-
     @question = Question.find(params[:id])
     @answer = @question.answers.build
   end
@@ -56,4 +55,4 @@ class QuestionsController < ApplicationController
   def question_params
    params.require(:question).permit(:title, :content, :tag_id)
   end
-end
+ end
