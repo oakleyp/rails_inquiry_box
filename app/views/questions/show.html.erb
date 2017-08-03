@@ -5,10 +5,21 @@
 <p><% @question.answers.each do |answer| %>
   <%= answer.content %>
   <%= "Answer Correct:" + answer.is_valid.to_s %></p>
-
 <%end%>
+
 <footer>
   <div class="footrow">
     <p>Copyright &copy; Rubeast Cohort 10 2017</p>
   </div>
 </footer>
+
+
+<h3>Add an answer</h3>
+<%= form_for @answer do |form| %>
+<%= form.label :content %>
+    <%= form.text_field :content, id: :answer_content %>
+
+		<%= form.hidden_field :question, :value => @question.id %>
+
+		<%= form.submit %>
+<% end %>

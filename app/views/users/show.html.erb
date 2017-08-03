@@ -6,6 +6,11 @@
     <%= link_to 'Edit', edit_user_path(@user) %>
   <% end %>
   </span>
+	<%= @user.questions.each do |user| %>
+		<% @question.title %>
+		<% @question.content %>
+		<% @question.answer %>
+	<% end %>
 </div>
 
 <div class="col-sm-8">
