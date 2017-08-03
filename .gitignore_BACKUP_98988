@@ -12,7 +12,11 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+<<<<<<< HEAD
+#/config/database.yml
+=======
 # /config/database.yml
+>>>>>>> master
 
 /node_modules
 /yarn-error.log
